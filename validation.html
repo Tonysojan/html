@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scripting</title>
+</head>
+<body bgcolor="lightgreen">
+<center>
+    <h1>FORM VALIDATION</h1>
+<table><form name="form" onsubmit="return validate_from()"><th><tr>
+    <label for="name">NAME:</label><input type="text" id="name">
+    <br><br></th></tr>
+<th><tr>
+    <label for="email">EMAIL:</label><input type="email" id="email">
+    <br><br></th></tr>
+<th><tr>
+    <label for="num">MOB NUMBER:</label><input type="tel" id="num">
+    <br><br></th></tr>
+<th><tr>
+    <label for="user">USERNAME:</label><input type="text" id="user">
+    <br><br></th></tr>
+<th><tr>
+    <label for="pass">PASSWORD:</label><input type="password" id="pass">
+    <br><br></th></tr>
+    <button id="btn1" onclick="">submit</button>
+    <button id="btn2" onclick="">reset</button>
+</table></form>
+</center>
+<script>
+    function validate_form(){
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var num=document.getElementById('num').value;
+        var user=document.getElementById('user').value;
+        var pass=document.getElementById('pass').value;
+        var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(name=="")
+{
+alert("enter name");
+document.getElemnetById('name').focus();
+return false;
+}
+else if(re.test(name)){
+alert("enter name");
+document.getElemnetById('name').focus();
+return false;
+}
+if(email=="")
+{
+alert("enter email");
+document.getElementById('email').focus();
+return false;
+}
+if(num=="")
+{
+alert("enter number");
+document.getElementById('num').focus();
+return false;
+}
+else if(num=isNaN(x) || x < 1 || x > 10)
+</script>
+</html>

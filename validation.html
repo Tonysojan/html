@@ -8,7 +8,7 @@
 <body bgcolor="lightgreen">
 <center>
     <h1>FORM VALIDATION</h1>
-<table><form name="form" onsubmit="return validate_from()"><th><tr>
+<table><form name="form" ><th><tr>
     <label for="name">NAME:</label><input type="text" id="name">
     <br><br></th></tr>
 <th><tr>
@@ -23,7 +23,7 @@
 <th><tr>
     <label for="pass">PASSWORD:</label><input type="password" id="pass">
     <br><br></th></tr>
-    <button id="btn1" onclick="">submit</button>
+    <button id="btn1" type="submit"  onclick="validate_form()">submit</button>
     <button id="btn2" onclick="">reset</button>
 </table></form>
 </center>
@@ -34,16 +34,17 @@
         var num=document.getElementById('num').value;
         var user=document.getElementById('user').value;
         var pass=document.getElementById('pass').value;
-        var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var ren=/[0-9!@#$%^&*]/
+        var re=(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}
 if(name=="")
 {
 alert("enter name");
-document.getElemnetById('name').focus();
+document.getElementById('name').focus();
 return false;
 }
-else if(re.test(name)){
+else if(ren.test(name)){
 alert("enter name");
-document.getElemnetById('name').focus();
+document.getElementById('name').focus();
 return false;
 }
 if(email=="")
@@ -58,6 +59,38 @@ alert("enter number");
 document.getElementById('num').focus();
 return false;
 }
-else if(num=isNaN(x) || x < 1 || x > 10)
+else if(isNaN(num)){
+alert("enter number");
+document.getElementById('num').focus();
+return false;
+}
+else if(num.length!=10){
+alert("enter 10 digit number");
+document.getElementById('num').focus();
+return false;
+}
+if(user=="")
+{
+alert("enter username");
+document.getElementById('user').focus();
+return false;
+}
+else if(ren.test(user)){
+alert("enter username");
+document.getElementById('user').focus();
+return false;
+}
+if(pass=="")
+{
+alert("enter password");
+document.getElementById('pass').focus();
+return false;
+}
+else if(re.test(pass)){
+alert("enter name");
+document.getElementById('pass').focus();
+return false;
+}
+}
 </script>
 </html>
